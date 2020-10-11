@@ -2,10 +2,8 @@ package com.Codegen.suntravels.model;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="hotel")
@@ -18,8 +16,12 @@ public class Hotel {
 
     @Id
     @GeneratedValue
-    private int HotelId;
-    private String Name;
-    private String Location;
-    private String Phone;
+    private int hid;
+    private String name;
+    private String location;
+    private String phone;
+
+
+
+
 }

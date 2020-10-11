@@ -15,14 +15,15 @@ public class HotelController {
     @Autowired              //automatically assign the properties with the reference
     private HotelDao hotelDao;
 
-    @PostMapping("/addHotel")
-    public String bookTicket(@RequestBody List<Hotel> hotel){
-        hotelDao.saveAll(hotel);
+
+    @PostMapping("/addHotel")           //to add a hotel details to the system
+    public String addHotel(@RequestBody Hotel hotel){
+
+        hotelDao.save(hotel);
         return "saved the hotel details ";
     }
-
-    @GetMapping("/getHotel")
-    public boolean getHotel(Hotel hotel){
-        return  hotelDao.equals(hotel);
+    @GetMapping("/getHotels")             //to view all the hotels in the system
+    public List<Hotel> getHotels(){
+        return (List<Hotel>) hotelDao.findAll();
     }
 }
