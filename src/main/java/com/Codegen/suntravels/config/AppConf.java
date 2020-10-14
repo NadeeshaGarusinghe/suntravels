@@ -10,7 +10,7 @@ public class AppConf implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOrigins("http://localhost:4200")
+                .allowedOrigins("http://localhost:4200","http://localhost:4200/suntravels/addContract")
                 .allowedMethods("GET");
     }
 }

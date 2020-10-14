@@ -15,6 +15,7 @@ public class ContractController {
     private ContractDao contractDao;
 
     @PostMapping("/addContract")     //to add contracts to the system
+    @CrossOrigin(origins = "*")
     public String addContract(@RequestBody Contract contract){
         contractDao.save(contract);
         return "saved the contract details ";

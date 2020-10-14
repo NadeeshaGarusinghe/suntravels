@@ -1,6 +1,7 @@
 package com.Codegen.suntravels.model;
 
 import lombok.*;
+import org.springframework.beans.factory.annotation.Value;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -22,9 +23,11 @@ public class Contract {
     private int hid;
     private Date startdate;
     private Date enddate;
-    @OneToMany(targetEntity = RoomType.class,cascade = CascadeType.ALL)
+    @Column(columnDefinition = "Double default 15.00")
+    private double markup=15;
+    @OneToMany(targetEntity = RoomDetails.class,cascade = CascadeType.ALL)
     @JoinColumn(name = "cid",referencedColumnName = "cid")
-    private List<RoomType> roomtypes;
+    private List<RoomDetails> roomDetails;
 
 
 

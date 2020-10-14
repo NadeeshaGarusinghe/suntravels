@@ -18,7 +18,7 @@ public class Hotel {
     @GeneratedValue
     private int hid;
     private String name;
-    private String location;
+    private int locationid;
     private String phone;
 
 

@@ -17,9 +17,8 @@ public class InsertRequest {
         return contract;
     }
 
-    public void setContract(Contract contract) {
-        this.contract = contract;
-    }
+
+
 }
 
 

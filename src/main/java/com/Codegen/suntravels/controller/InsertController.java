@@ -17,12 +17,14 @@ public class InsertController {
     @Autowired
     private RoomTypeDao roomTypeDao;
 
-    @PostMapping("/insertRoomTypes")
-    public Contract storeRoomType(@RequestBody InsertRequest request){
+    @PostMapping("/insertRoomDetails")
+    public Contract storeRoomDetais(@RequestBody InsertRequest request){
         return contractDao.save(request.getContract());
     }
     @GetMapping("/findAllContracts")
     public List<Contract> findAllContracts(){
         return contractDao.findAll();
     }
+
+
 }
