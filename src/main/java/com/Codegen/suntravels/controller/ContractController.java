@@ -18,7 +18,7 @@ public class ContractController {
     @CrossOrigin(origins = "*")
     public String addContract(@RequestBody Contract contract){
         contractDao.save(contract);
-        return "saved the contract details ";
+        return "Contract is added to the system Successfully";
     }
 
     @GetMapping("/getContracts")    //to view the all contracts

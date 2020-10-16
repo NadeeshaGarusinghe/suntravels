@@ -1,6 +1,7 @@
 package com.Codegen.suntravels.controller;
 
 import com.Codegen.suntravels.dao.ContractDao;
+import com.Codegen.suntravels.dao.RoomDetailsDao;
 import com.Codegen.suntravels.dao.RoomTypeDao;
 import com.Codegen.suntravels.dto.InsertRequest;
 import com.Codegen.suntravels.model.Contract;
@@ -15,7 +16,7 @@ public class InsertController {
     @Autowired
     private ContractDao contractDao;
     @Autowired
-    private RoomTypeDao roomTypeDao;
+    private RoomDetailsDao roomDetailsDao;
 
     @PostMapping("/insertRoomDetails")
     public Contract storeRoomDetais(@RequestBody InsertRequest request){
