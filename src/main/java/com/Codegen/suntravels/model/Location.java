@@ -1,7 +1,6 @@
 package com.Codegen.suntravels.model;
 
 import lombok.*;
-import org.hibernate.type.descriptor.sql.TinyIntTypeDescriptor;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,19 +8,16 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="roomdetails")
-@Data
+@Table(name="location")
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class RoomDetails {
+public class Location {
     @Id
     @GeneratedValue
-    private int rdetailsid;
-    private double rprice;
-    private int maxadults;
-    private int availablerooms;
-    private int rtypeid;
-
-
+    private int locaionid;
+    private String parent;
+    private String child;
 }

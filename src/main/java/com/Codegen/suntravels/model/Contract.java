@@ -29,6 +29,11 @@ public class Contract {
     @JoinColumn(name = "cid",referencedColumnName = "cid")
     private List<RoomDetails> roomDetails;
 
+    //public List<Contract> findMarkupedValue(String checkindate,int noofnights,int noofroomwithadults) {
+       // for (int i=0;i<2;i++){
 
+
+        //}
+  //  }
 
 }

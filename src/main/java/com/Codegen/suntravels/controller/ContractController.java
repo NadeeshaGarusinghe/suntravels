@@ -6,10 +6,11 @@ import com.Codegen.suntravels.model.Hotel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 @RestController                     //mapping request data to the defined request handler method.
-@RequestMapping("/suntravels")
+//@RequestMapping("/suntravels")
 public class ContractController {
     @Autowired              //automatically assign the properties with the reference
     private ContractDao contractDao;
@@ -21,9 +22,16 @@ public class ContractController {
         return "Contract is added to the system Successfully";
     }
 
-    @GetMapping("/getContracts")    //to view the all contracts
+    @GetMapping("/getContracts}")    //to view the all contracts
     public List<Contract> getContracts(){
         return (List<Contract>) contractDao.findAll();
     }
+   @RequestMapping(value="/findContracts",method = RequestMethod.GET,params={"checkindate","noofnights","noofroomswithadults"})
+    public  List<Contract> findContracts(String checkindate,int noofnights,int noofroomswithadults){
+       return (List<Contract>) contractDao.findAll();
+
+   }
+
+
 
 }

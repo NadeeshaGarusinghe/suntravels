@@ -18,8 +18,12 @@ public class Hotel {
     @GeneratedValue
     private int hid;
     private String name;
-    private int locationid;
     private String phone;
+
+    @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @JoinColumn(name = "locationid")
+    private Location location;
+
 
 
 

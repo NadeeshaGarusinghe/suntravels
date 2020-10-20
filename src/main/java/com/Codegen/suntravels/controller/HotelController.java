@@ -9,7 +9,7 @@ import java.util.List;
 
 
 @RestController                     //mapping request data to the defined request handler method.
-@RequestMapping("/suntravels")      //maps the specific request path onto a controller
+//@RequestMapping("/suntravels")      //maps the specific request path onto a controller
 public class HotelController {
 
     @Autowired              //automatically assign the properties with the reference

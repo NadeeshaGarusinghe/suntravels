@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController                     //mapping request data to the defined request handler method.
-@RequestMapping("/suntravels")
+//@RequestMapping("/suntravels")
 public class RoomTypeController {
 
     @Autowired              //automatically assign the properties with the reference
@@ -26,3 +26,4 @@ public class RoomTypeController {
         return (List<RoomType>) roomTypeDao.findAll();
     }
 }
+
