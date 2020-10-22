@@ -34,7 +34,7 @@ public class QueryController {
 
     //@GetMapping("/joinQuery3")
     @RequestMapping(value="/joinQuery3",method = RequestMethod.GET,params={"checkindate","noofnights","noofroomswithadults"})
-    public List<MarkedupContractResponse> getQuery3(Date checkindate, int noofnights, int noofroomswithadults){
+    public List<MarkedupContractResponse> getQuery3(Date checkindate, int noofnights, int[] noofroomswithadults){
         return queryService.CHCRExplicitJoin(checkindate, noofnights, noofroomswithadults);
     }
 
@@ -44,4 +44,6 @@ public class QueryController {
         return queryService.contractAllData();
 
     }
+
+
 }

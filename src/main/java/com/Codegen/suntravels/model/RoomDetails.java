@@ -23,5 +23,43 @@ public class RoomDetails {
     private int availablerooms;
     private int rtypeid;
 
+    public int getRdetailsid() {
+        return rdetailsid;
+    }
 
+    public void setRdetailsid(int rdetailsid) {
+        this.rdetailsid = rdetailsid;
+    }
+
+    public double getRprice() {
+        return rprice;
+    }
+
+    public void setRprice(double rprice) {
+        this.rprice = rprice;
+    }
+
+    public int getMaxadults() {
+        return maxadults;
+    }
+
+    public void setMaxadults(int maxadults) {
+        this.maxadults = maxadults;
+    }
+
+    public int getAvailablerooms() {
+        return availablerooms;
+    }
+
+    public void setAvailablerooms(int availablerooms) {
+        this.availablerooms = availablerooms;
+    }
+
+    public int getRtypeid() {
+        return rtypeid;
+    }
+
+    public void setRtypeid(int rtypeid) {
+        this.rtypeid = rtypeid;
+    }
 }

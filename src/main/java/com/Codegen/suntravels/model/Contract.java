@@ -16,6 +16,53 @@ import java.util.List;
 @ToString
 public class Contract {
 
+    public int getCid() {
+        return cid;
+    }
+
+    public void setCid(int cid) {
+        this.cid = cid;
+    }
+
+    public int getHid() {
+        return hid;
+    }
+
+    public void setHid(int hid) {
+        this.hid = hid;
+    }
+
+    public Date getStartdate() {
+        return startdate;
+    }
+
+    public void setStartdate(Date startdate) {
+        this.startdate = startdate;
+    }
+
+    public Date getEnddate() {
+        return enddate;
+    }
+
+    public void setEnddate(Date enddate) {
+        this.enddate = enddate;
+    }
+
+    public double getMarkup() {
+        return markup;
+    }
+
+    public void setMarkup(double markup) {
+        this.markup = markup;
+    }
+
+    public List<RoomDetails> getRoomDetails() {
+        return roomDetails;
+    }
+
+    public void setRoomDetails(List<RoomDetails> roomDetails) {
+        this.roomDetails = roomDetails;
+    }
 
     @Id
     @GeneratedValue
