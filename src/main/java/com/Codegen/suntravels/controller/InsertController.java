@@ -21,10 +21,7 @@ public class InsertController {
     public Contract storeRoomDetais(@RequestBody InsertRequest request){
         return contractDao.save(request.getContract());
     }
-   // @GetMapping("/getInfo")
-    //public List<MarkedupContract> findAllContracts(){
-     //   return contractDao.getJoinInformation();
-   // }
+
 
 
 }

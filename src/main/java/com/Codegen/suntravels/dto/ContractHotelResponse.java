@@ -2,8 +2,12 @@ package com.Codegen.suntravels.dto;
 
 import com.Codegen.suntravels.model.Contract;
 import lombok.*;
-
 import java.util.ArrayList;
+
+/*
+* this is like a summary of what should be displayed when the user request for view original
+* contracts
+* */
 
 @Data
 @Getter

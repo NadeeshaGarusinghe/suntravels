@@ -5,6 +5,13 @@ import lombok.*;
 
 import java.util.Date;
 
+
+/*
+* This is like a summary that indicates, when user requests the available room details by adding checkin date,no of nights and no of adults
+* then we have to filter the relevant contracts from the All contracts list (should consider checkindate must be between  the start date and end date, availability status)
+* So after filtering the necessary contracts using join queries, i filtered only the necessary data. so to return them I need a specipic model and for that I create this.
+* */
+
 @Data
 @Getter
 @Setter

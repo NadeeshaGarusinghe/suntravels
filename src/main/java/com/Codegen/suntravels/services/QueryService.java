@@ -5,14 +5,10 @@ import com.Codegen.suntravels.dto.ContractResponse;
 import com.Codegen.suntravels.dto.MarkedupContractResponse;
 import com.Codegen.suntravels.dto.ViewContractHotelResponse;
 import com.Codegen.suntravels.dto.ViewContractRoomTypeRespose;
-import com.Codegen.suntravels.model.Contract;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.*;
 
 @Service
@@ -73,7 +69,7 @@ public String getHotelName(int n,int m) {
 
     @SuppressWarnings("unchecked")
     @Override
-    public List<MarkedupContractResponse> CHCRExplicitJoin(Date checkindate, int noofnights, int[] noofroomswithadults) {
+    public List<MarkedupContractResponse> ContractHotelRoomDetailsExplicitJoin(Date checkindate, int noofnights, int[] noofroomswithadults) {
       Calendar c=Calendar.getInstance();
       c.setTime(checkindate);
       c.add(Calendar.DATE,noofnights);
@@ -87,16 +83,12 @@ public String getHotelName(int n,int m) {
               highestAdultNumberValue=adultcount;
           }
       }
-      System.out.println(highestAdultNumberValue);
-
         EntityManager em=emf.createEntityManager();
         em.getTransaction().begin();
         List<ContractResponse> results=em.createQuery("SELECT new com.Codegen.suntravels.dto.ContractResponse(c.cid,c.markup,c.startdate,c.enddate, r.rprice,r.maxadults,r.availablerooms,r.rtypeid,h.name,h.phone,h.location,t.roomtype) FROM Contract c JOIN c.roomDetails r JOIN Hotel h ON c.hid=h.hid JOIN RoomType t ON t.rtypeid=r.rtypeid WHERE c.startdate<=?1 AND c.enddate>=?2").setParameter(1,checkindate).setParameter(2,finalday).getResultList();
         em.getTransaction().commit();
         em.close();
         return this.getMarkedupResponse(results,noofnights,noofAdults,noOfRoomsRequired,highestAdultNumberValue);
-
-        //return results;
     }
 
 
@@ -117,24 +109,8 @@ public String getHotelName(int n,int m) {
             temp.setMarkedupprice(markedupprice);
             temp.setName(name);
             temp.setRoomtype(rtype);
-            System.out.println(temp.getMarkedupprice());
-            System.out.println(temp.getName());
-            System.out.println(noofnights);
-            System.out.println(noofAdults);
-
             result.add(temp);
-            System.out.println(result);
         }
         return result;
-    }
-
-
-
-
-    public List<Contract> contractAllData(){
-        return contractDao.findAll();
-    }
-    public void newQuery(){
-
     }
 }

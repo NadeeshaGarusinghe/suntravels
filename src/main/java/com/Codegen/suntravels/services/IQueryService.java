@@ -12,7 +12,7 @@ import java.util.List;
 public interface IQueryService {
     List<ViewContractHotelResponse> HotelContractExplicitJoin();
     List<ViewContractRoomTypeRespose> ContractRoomTypeImplicitJoin();
-    public List<MarkedupContractResponse> CHCRExplicitJoin(Date checkindate, int noofnights, int[] noofroomswithadults);
+    public List<MarkedupContractResponse> ContractHotelRoomDetailsExplicitJoin(Date checkindate, int noofnights, int[] noofroomswithadults);
     public String getHotelName(int n,int m);
     public String getRoomTypes(int n);
 

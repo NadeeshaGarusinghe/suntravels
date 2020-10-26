@@ -4,8 +4,12 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-
 import java.util.Date;
+
+/*
+* when I did the Contract RoomType ImplicitJoin (because, there also it haven't a relationship between room types)
+* to return the necessary data, I used this model
+* */
 
 
 @Data

@@ -23,6 +23,7 @@ public class RoomDetails {
     private int availablerooms;
     private int rtypeid;
 
+    //getters and setters
     public int getRdetailsid() {
         return rdetailsid;
     }
